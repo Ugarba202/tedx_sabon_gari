@@ -1,0 +1,45 @@
+/* Payment Success Message Styles */
+#paymentSuccess {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.success-icon-container {
+    width: 60px;
+    height: 60px;
+    background: #28a745;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 30px;
+}
+
+.success-title {
+    color: #28a745;
+    margin-bottom: 10px;
+}
+
+.success-subtitle {
+    margin-bottom: 20px;
+}
+
+.success-details-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: left;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.success-details-box p {
+    margin-bottom: 5px;
+}
+
+.success-details-box p:last-child {
+    margin-bottom: 0;
+}

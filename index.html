@@ -5,6 +5,8 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description"
+    content="TEDxSabonGari - Bridging the Gap. A local TEDx event spreading powerful ideas and inspiring change in Sabon Gari and beyond.">
 
   <title>TEDx Sabon Gari - Bridging the Gap</title>
 
@@ -21,6 +23,12 @@
   <!-- Responsive Style -->
   <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
 
+
+
+  <!-- Paystack Inline -->
+  <script src="https://js.paystack.co/v1/inline.js"></script>
+  <!-- Payment CSS -->
+  <link rel="stylesheet" type="text/css" href="assets/css/payment.css">
 </head>
 
 <body>
@@ -44,7 +52,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#about">
+              <a class="nav-link" href="about.html">
                 About
               </a>
             </li>
@@ -55,7 +63,7 @@
             </li>
             <li>
               <div class="banner-btn">
-                <a href="#" class="btn btn-common">Get Ticket</a>
+                <a href="#tickets" class="btn btn-common">Get Ticket</a>
               </div>
             </li>
 
@@ -114,7 +122,8 @@
                   <div class="row">
                     <div class="col-lg-6 col-md-12 col-xs-12">
                       <div class="img-thumb">
-                        <img class="img-fluid" src="assets/img/about-cover.jpg" alt="">
+                        <img class="img-fluid" src="assets/img/about-cover.jpg" alt="About TEDxSabonGari"
+                          loading="lazy">
                       </div>
                     </div>
                     <div class="col-lg-6 col-md-12 col-xs-12">
@@ -138,7 +147,7 @@
                             <li><i class="lni-check-mark-circle"></i>Inspire solutions to local and global challenges.
                             </li>
                           </ul>
-                          <a class="btn btn-common" href="#">Learn More</a>
+                          <a class="btn btn-common" href="about.html">Learn More</a>
                         </div>
                       </div>
                     </div>
@@ -159,7 +168,7 @@
             </div>
             <div class="counter-content">
               <div class="counterUp">20</div>
-              <p>Spekers</p>
+              <p>Speakers</p>
             </div>
           </div>
         </div>
@@ -216,7 +225,7 @@
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="speaker-item wow fadeInUp" data-wow-delay="0.2s">
             <div class="img-thumb">
-              <img src="assets/img/speaker/keynote-1.jpg" alt="Keynote Speaker 1" class="img-fluid">
+              <img src="assets/img/speaker/keynote-1.jpg" alt="Keynote Speaker 1" class="img-fluid" loading="lazy">
             </div>
           </div>
         </div>
@@ -224,7 +233,7 @@
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="speaker-item wow fadeInUp" data-wow-delay="0.4s">
             <div class="img-thumb">
-              <img src="assets/img/speaker/keynote-2.jpg" alt="Keynote Speaker 2" class="img-fluid">
+              <img src="assets/img/speaker/keynote-2.jpg" alt="Keynote Speaker 2" class="img-fluid" loading="lazy">
             </div>
           </div>
         </div>
@@ -232,14 +241,13 @@
         <div class="col-lg-4 col-md-6 col-xs-12">
           <div class="speaker-item wow fadeInUp" data-wow-delay="0.6s">
             <div class="img-thumb">
-              <img src="assets/img/speaker/keynote-3.jpg" alt="Keynote Speaker 3" class="img-fluid">
+              <img src="assets/img/speaker/keynote-3.jpg" alt="Keynote Speaker 3" class="img-fluid" loading="lazy">
             </div>
           </div>
         </div>
       </div>
       <div class="text-center mt-5 wow fadeInUp" data-wow-delay="0.8s">
-        <a href="speakers.html" class="btn btn-common"
-          style="cursor: pointer;">See All Speakers</a>
+        <a href="speakers.html" class="btn btn-common" style="cursor: pointer;">See All Speakers</a>
       </div>
     </div>
   </section>
@@ -285,7 +293,7 @@
             <h3 class="ticket-name">Standard</h3>
             <p class="ticket-description">Full event access</p>
             <div class="ticket-price">
-              <span class="price">₦8,000</span>
+              <span class="price">₦7,000</span>
             </div>
             <ul class="ticket-features">
               <li><span class="checkmark">✓</span> General admission</li>
@@ -304,7 +312,7 @@
             <h3 class="ticket-name">VIP</h3>
             <p class="ticket-description">Premium experience</p>
             <div class="ticket-price">
-              <span class="price">₦15,000</span>
+              <span class="price">₦10,000</span>
             </div>
             <ul class="ticket-features">
               <li><span class="checkmark">✓</span> VIP seating</li>
@@ -321,22 +329,38 @@
 
       <!-- Checkout Section -->
       <div class="checkout-section" id="checkoutSection">
-        <h3>Confirm Registration & Upload Receipt</h3>
+        <h3>Confirm Registration</h3>
         <form class="checkout-form" id="checkoutForm">
           <div class="form-row">
-            <input type="text" placeholder="First Name" required>
-            <input type="text" placeholder="Last Name" required>
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
           </div>
-          <input type="email" placeholder="Email Address" required>
-          <input type="tel" placeholder="Phone Number" required>
-          <div class="form-group">
-            <label for="receiptUpload" style="color: #ccc; font-size: 14px; margin-bottom: 8px; display: block;">Upload
-              Payment Receipt</label>
-            <input type="file" id="receiptUpload" class="form-control-file" accept="image/*,.pdf"
-              style="padding: 10px 0; background: transparent; border: none; color: #fff;" required>
-          </div>
-          <button type="submit" class="btn btn-primary w-full">Proceed to Check </button>
+          <input type="email" id="email" placeholder="Email Address" required>
+          <input type="tel" id="phone" placeholder="Phone Number" required>
+          <!-- Hidden input to store ticket type and price -->
+          <input type="hidden" id="ticketType">
+          <input type="hidden" id="ticketPrice">
+
+          <button type="submit" class="btn btn-primary w-full" id="payButton">Pay Now</button>
         </form>
+
+        <!-- Payment Success Message (Hidden by default) -->
+        <div id="paymentSuccess">
+          <div class="success-icon-container">
+            <i class="lni-check-mark-circle"></i>
+          </div>
+          <h3 class="success-title">Payment Successful!</h3>
+          <p class="success-subtitle">Thank you for your purchase. Your ticket has been reserved.</p>
+
+          <div class="success-details-box">
+            <p><strong>Transaction Ref:</strong> <span id="successRef"></span></p>
+            <p><strong>Amount Paid:</strong> <span id="successAmount"></span></p>
+            <p><strong>Ticket Type:</strong> <span id="successTicket"></span></p>
+            <p><strong>Email:</strong> <span id="successEmail"></span></p>
+          </div>
+
+          <button class="btn btn-common" onclick="location.reload()">Buy Another Ticket</button>
+        </div>
       </div>
     </div>
   </section>
@@ -355,39 +379,39 @@
             <img src="assets/img/partners/partner-1.jpg" alt="Partner 1">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner-2.jpg" alt="Partner 2">
+            <img src="assets/img/partners/partner-2.jpg" alt="Partner 2" loading="lazy">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner-3.jpg" alt="Partner 3">
+            <img src="assets/img/partners/partner-3.jpg" alt="Partner 3" loading="lazy">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner4.PNG" alt="Partner 4">
+            <img src="assets/img/partners/partner4.PNG" alt="Partner 4" loading="lazy">
           </div>
           <!-- Slide Set 2 (Duplicate for loop) -->
           <div class="partner-slide">
             <img src="assets/img/partners/partner-1.jpg" alt="Partner 1">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner-2.jpg" alt="Partner 2">
+            <img src="assets/img/partners/partner-2.jpg" alt="Partner 2" loading="lazy">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner-3.jpg" alt="Partner 3">
+            <img src="assets/img/partners/partner-3.jpg" alt="Partner 3" loading="lazy">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner4.PNG" alt="Partner 4">
+            <img src="assets/img/partners/partner4.PNG" alt="Partner 4" loading="lazy">
           </div>
           <!-- Slide Set 3 (Duplicate for safety/smoother loop) -->
           <div class="partner-slide">
-            <img src="assets/img/partners/partner-1.jpg" alt="Partner 1">
+            <img src="assets/img/partners/partner-1.jpg" alt="Partner 1" loading="lazy">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner-2.jpg" alt="Partner 2">
+            <img src="assets/img/partners/partner-2.jpg" alt="Partner 2" loading="lazy">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner-3.jpg" alt="Partner 3">
+            <img src="assets/img/partners/partner-3.jpg" alt="Partner 3" loading="lazy">
           </div>
           <div class="partner-slide">
-            <img src="assets/img/partners/partner4.PNG" alt="Partner 4">
+            <img src="assets/img/partners/partner4.PNG" alt="Partner 4" loading="lazy">
           </div>
         </div>
       </div>
@@ -404,7 +428,7 @@
             <li>
               <i class="lni-home"></i>
             </li>
-            <li><span>Sabon Gari, Nigeria</li>
+            <li><span>Sabon Gari, Nigeria</span></li>
           </ul>
         </div>
         <div class="col-lg-4 col-md-3 col-xs-12">
@@ -433,7 +457,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 col-md-12 col-xs-12">
           <div class="subscribe-inner wow fadeInDown" data-wow-delay="0.3s">
-            <h2 class="subscribe-title">To Get Nearly Updates</h2>
+            <h2 class="subscribe-title">Subscribe for Updates</h2>
             <form class="text-center form-inline">
               <input class="mb-20 form-control" name="email" placeholder="Enter Your Email Here">
               <button type="submit" class="btn btn-common sub-btn" data-style="zoom-in" data-spinner-size="30"
@@ -443,7 +467,7 @@
             </form>
           </div>
           <div class="footer-logo">
-            <img src="assets/img/logo.png" alt="">
+            <img src="assets/img/logo.png" alt="" loading="lazy">
           </div>
           <div class="social-icons-footer">
             <ul>
@@ -498,6 +522,7 @@
   <script src="assets/js/nivo-lightbox.js"></script>
   <script src="assets/js/video.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/payment.js"></script>
 </body>
 
 </html>
