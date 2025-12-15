@@ -270,17 +270,18 @@
         <!-- Early Bird -->
         <div class="ticket-card" data-ticket="early-bird">
           <div class="ticket-content">
-            <h3 class="ticket-name">Early Bird</h3>
+            <h3 class="ticket-name">Promo</h3>
             <p class="ticket-description">Limited early access</p>
             <div class="ticket-price">
               <span class="price">₦5,000</span>
-              <span class="original-price">₦8,000</span>
+              <span class="original-price">₦7,000</span>
             </div>
             <ul class="ticket-features">
               <li><span class="checkmark">✓</span> General admission</li>
               <li><span class="checkmark">✓</span> Lunch & refreshments</li>
               <li><span class="checkmark">✓</span> Networking session</li>
               <li><span class="checkmark">✓</span> Event materials</li>
+              <li><span class="checkmark">✓</span> Certificate</li>
             </ul>
             <button class="btn btn-primary w-full ticket-select-btn">Select Ticket</button>
           </div>
@@ -327,6 +328,20 @@
         </div>
       </div>
 
+      <!-- Cart Section (Hidden by default) -->
+      <div id="cartContainer"
+        style="display:none; margin-bottom: 30px; background: #f8f9fa; padding: 20px; border-radius: 8px; border: 1px solid #ddd;">
+        <h3 style="margin-bottom: 15px;">Your Cart</h3>
+        <ul id="cartList" style="list-style: none; padding: 0; margin-bottom: 20px;">
+          <!-- Cart items will be injected here -->
+        </ul>
+        <div
+          style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #ccc; padding-top: 10px;">
+          <h4 style="margin: 0;">Total: <span id="cartTotalDisplay">₦0</span></h4>
+          <button class="btn btn-danger btn-sm" id="clearCartBtn">Clear Cart</button>
+        </div>
+      </div>
+
       <!-- Checkout Section -->
       <div class="checkout-section" id="checkoutSection">
         <h3>Confirm Registration</h3>
@@ -358,6 +373,12 @@
             <p><strong>Ticket Type:</strong> <span id="successTicket"></span></p>
             <p><strong>Email:</strong> <span id="successEmail"></span></p>
           </div>
+
+          <a href="https://chat.whatsapp.com/ED6fJBckypV3rcvag1FPoT?mode=hqrt2" class="btn btn-success mb-3"
+            target="_blank"
+            style="background-color: #25D366; border-color: #25D366; color: white; display: block; width: 100%; margin-bottom: 10px;">
+            <i class="lni-whatsapp"></i> Join WhatsApp Group
+          </a>
 
           <button class="btn btn-common" onclick="location.reload()">Buy Another Ticket</button>
         </div>
